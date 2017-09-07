@@ -1,0 +1,267 @@
+<!DOCTYPE>
+<head>
+	<title>Peaceful Ride</title> 
+	<link rel="stylesheet" href="themes/PeacefulRide.css" /> 
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> 
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script>
+        $(document).ready(function() {
+			<!--buttons which need to be turned off at first-->
+            $("#alert1AlertStatus").hide();
+            $("#alert2AlertStatus").hide();
+            <!--text on home page -->
+            $("#homeThanksParagraph").hide();
+            $("#homeThanksConfirmParagraph").hide();
+            $("#homeIntro").show();
+            $("#homeAlert").show();
+            $("#homeInfo").show();
+            $("#homeCancel").hide();
+            $("#homeThanks").hide();
+        });
+	</script>
+	<meta name="viewport" content="width=device-width"/>
+</head>
+<body data-theme="d">
+
+	<!--HOME PAGE -->
+	<div data-role="page" id="Home" data-theme="d">
+		<title>Home</title>
+		<div data-role="header">
+			<h1>Peaceful Ride</h1>
+		</div>
+		<div data-role="content">
+            <!--Send Alert Button and Popup-->
+			<div align="left"><a href="#homePopupConfirmSend" id="homeSendAlert" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-d">Send Alert</a></div>
+			<div data-role="popup" id="homePopupConfirmSend" data-overlay-theme="d" data-theme="d" data-dismissible="false" style="max-width:400px;">
+    			<div data-role="header" data-theme="a">
+    				<h1>Send alert?</h1>
+    			</div>
+    			<div role="main" class="ui-content">
+        			<h3 class="ui-title">Are you ready to send this alert?</h3>
+        			<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">No</a>
+        			<a href="#AlertStatusPage1" id="homePopupConfirmSendOk" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Yes</a>
+    			</div>
+			</div>
+			<script>
+					$("#homePopupConfirmSendOk").click(function() {
+					    $("#alert1CancelAlert").show(1);
+                        $("#alert1AlertStatus").css("color", "yellow");
+						$("#alert1AlertStatus").delay(7500).show(1);
+					});
+			</script>
+			<!--Thanks Button and Popup-->
+			<div align="left"><a href="#homePopupConfirmThanks" id="homeThanks" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-d">Send Thanks</a></div>
+			<div data-role="popup" id="homePopupConfirmThanks" data-overlay-theme="d" data-theme="d" data-dismissible="false" style="max-width:400px;">
+				<div data-role="header" data-theme="a">
+					<h1>Send thanks?</h1>
+				</div>
+				<div role="main" class="ui-content">
+					<h3 class="ui-title">Are you ready to send this thank you?</h3>
+					<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">No</a>
+					<a href="#" id="homePopupConfirmThanksOk" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Yes</a>
+				</div>
+			</div>
+			<script>
+                $("#homePopupConfirmThanksOk").click(function() {
+                    $("#homeThanks").hide();
+                    $("#homeThanksParagraph").hide();
+                    $("#homeThanksConfirmParagraph").show();
+
+                });
+			</script>
+			<div>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<p id="homeIntro">Welcome to PeacefulRide. </p>
+				<p id="homeThanksParagraph">To send your conductor a thank you, click "Send Thanks."</p>
+				<p id="homeThanksConfirmParagraph">Your thank you has been sent.</p>
+				<p id="homeCancel">Thank you.  Your alert has been cancelled.</p>
+				<p id="homeAlert">To send an alert, click "Send Alert."  </p>
+				<p id="homeInfo">If you are wondering what to do, click "Info."</p>
+
+			</div>
+			<!--Info Button-->
+			<div><a href="#InfoPage" id="homeInfoButton" class="infoBtn ui-btn ui-btn-corner-all ui-btn-inline">Info</a></div>
+		</div>
+	</div>
+
+
+	<!--ALERT STATUS ONE PAGE -->
+	<div data-role="page" id="AlertStatusPage1" data-theme="d">
+		<title>Welcome</title>
+		<div data-role="header">
+			<h1>Peaceful Ride</h1>
+		</div>
+		<div data-role="content">
+			<!--Cancel Alert Button and Popup-->
+			<div align="right"><a href="#popupDialogConfirmCancel" id="alert1CancelAlert" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-d">Cancel Alert</a></div>
+			<div data-role="popup" id="popupDialogConfirmCancel" data-overlay-theme="d" data-theme="d" data-dismissible="false" style="max-width:400px;">
+				<div data-role="header" data-theme="a">
+					<h1>Cancel alert?</h1>
+				</div>
+				<div role="main" class="ui-content">
+					<h3 class="ui-title">Would you like to cancel this alert?</h3>
+					<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">No</a>
+					<a href="#Home" id="alert1PopupConfirmCancelOk"class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Yes</a>
+				</div>
+				<script>
+                    $("#alert1PopupConfirmCancelOk").click(function() {
+                        $("#alert1AlertStatus").hide();
+                        $("#alert2AlertStatus").hide();
+                        $("#homeThanksParagraph").hide();
+                        $("#homeThanksConfirmParagraph").hide();
+                        $("#homeIntro").hide();
+                        $("#homeAlert").show();
+                        $("#homeInfo").show();
+                        $("#homeCancel").show();
+                        $("#homeThanks").hide();
+                    });
+				</script>
+			</div>
+			<!--Alert Status Button and Popup-->
+			<div align="right"><a href="#alertPopupAlertStatus" id="alert1AlertStatus" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-d">Alert Status</a></div>
+			<div data-role="popup" id="alertPopupAlertStatus" data-overlay-theme="d" data-theme="d" data-dismissible="false" style="max-width:400px;">
+				<div data-role="header" data-theme="a">
+					<h1>Status of your alert</h1>
+				</div>
+				<div role="main" class="ui-content">
+					<h3 class="ui-title">Response from the conductor.  </h3>
+					<p>Thank you for your notification.  I am currently completing another task.
+						I will come to the quiet ride car to resolve the issue in 5 minutes.
+						Please do not click the 'Cancel Alert' button unless the noise has
+						subsided.  I will cancel the alert once I have spoken to the
+						noisy passenger and verified that the car is again quiet.  </p>
+					<a href="#AlertStatusPage2" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" id="alert1OkAlertStatus">ok</a>
+				</div>
+			</div>
+			<script>
+                $("#alert1OkAlertStatus").on('click', function() {
+                    $("#alert2CancelAlert").show();
+                    setTimeout(function() {
+						$("#alert2AlertStatus").css("color", "lightGreen");
+                        $("#alert2AlertStatus").show(1);
+                        $("#alert2CancelAlert").hide();
+                        }, 7000);
+
+                });
+			</script>
+			<div>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<p>Thank you.  Your alert has been sent. </p>
+				<p>Click "Cancel Alert" to cancel the alert. </p>
+				<p>Presently, a yellow "Alert Status" button will appear, with information from the conductor.  </p>
+			</div>
+			<div><a href="#InfoPage" id="alertOneInfoButton" class="infoBtn ui-btn ui-btn-corner-all ui-btn-inline">Info</a></div>
+		</div>
+	</div>
+
+	<!--ALERT STATUS TWO PAGE -->
+	<div data-role="page" id="AlertStatusPage2" data-theme="d">
+		<title>Welcome</title>
+		<div data-role="header">
+			<h1>Peaceful Ride</h1>
+		</div>
+		<div data-role="content">
+			<!--Cancel Alert Button and Popup-->
+			<div align="right"><a href="#alert2PopupConfirmCancel" id="alert2CancelAlert" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-d">Cancel Alert</a></div>
+			<div data-role="popup" id="alert2PopupConfirmCancel" data-overlay-theme="d" data-theme="d" data-dismissible="false" style="max-width:400px;">
+				<div data-role="header" data-theme="a">
+					<h1>Cancel alert?</h1>
+				</div>
+				<div role="main" class="ui-content">
+					<h3 class="ui-title">Would you like to cancel this alert?</h3>
+					<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">No</a>
+					<a href="#Home" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Yes</a>
+				</div>
+			</div>
+			<br/>
+			<br/>
+			<br/>
+			<!--Alert Status Button and Popup-->
+			<div align="right"><a href="#alert2PopupAlertStatus" id="alert2AlertStatus" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-d">Alert Status</a></div>
+			<div data-role="popup" id="alert2PopupAlertStatus" data-overlay-theme="d" data-theme="d" data-dismissible="false" style="max-width:400px;">
+				<div data-role="header" data-theme="a">
+					<h1>Status of your alert</h1>
+				</div>
+				<div role="main" class="ui-content">
+					<h3 class="ui-title">Response from the conductor.  </h3>
+					<p>I have asked the patron to be quiet while in the quiet ride car.  I believe the car is now quiet.  Please send another alert if the car is no longer quiet.  Thank you.</p>
+					<a href="#Home" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" id="alert2OkAlertStatus">ok</a>
+				</div>
+			</div>
+			<script>
+                $("#alert2OkAlertStatus").on('click', function() {
+                    $("#cancelAlertStatus").hide();
+                    $("#alert1AlertStatus").hide();
+                    $("#alert2AlertStatus").hide();
+                    $("#homeThanksParagraph").show();
+                    $("#homeThanks").show();
+                    $("#homeAlert").show();
+                    $("#homeInfo").show();
+                    $("#homeCancel").hide();
+                    $("#homeIntro").hide();
+
+                });
+			</script>
+			<div>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<p>Click "Cancel Alert" to cancel the alert. </p>
+				<p>When the conductor has resolved the noise,
+					"Cancel Alert" will disappear,
+					and a green "Alert Status" button will appear,
+					which you can click for information regarding the alert's resolution.  </p>
+			</div>
+			<div><a href="#InfoPage" id="AlertTwoInfoButton" class="infoBtn ui-btn ui-btn-corner-all ui-btn-inline">Info</a></div>
+		</div>
+	</div>
+	<!--INFO PAGE-->
+	<div data-role="page" id="InfoPage" data-theme="d">
+		<title>Information</title>
+		<div data-role="header" data-position="fixed">
+			<h1>Information</h1>
+		</div>
+		<div data-role="content">
+			<p> Peaceful Ride attempts to facilitate a quiet and peaceful commute
+				for passengers on SEPTA's Regional Rail Quiet Ride cars.
+				</p>
+			<p> Peaceful Ride allows Quiet Ride passengers to send an anonymous message to their
+				train's conductors, telling them that someone is making too much noise
+				in the Quiet Ride car.  To send that message to your conductors now, tap "Back" and then "Send Alert." </p>
+			<p>	If, after you send the alert and before the conductor arrives,
+				the noise stops, you can tap "Cancel Alert,"
+				(which appears once you have sent an alert
+				and disappears once the conductor resolves the noise.)  </p>
+			<p>Later, "Alert Status" (text in yellow) will appear.  Tap to
+				see a message from one of the
+				train's conductors, telling you when he or she will return to the
+				Quiet Ride car to resolve the noise.</p>
+			<p>Once the conductor has resolved the noise, "Alert Status"
+				will appear again, this time with green text. </p>
+			<p>Later, "Send Thanks" will appear.  Tap to send thanks to your conductor,
+				if you are pleased with the way the conductor resolved the issue. </p>
+			<p>All communication takes place through the app
+				and is discrete and 100% confidential.  </p>
+			<p>We hope that Peaceful Ride improves your commute in the quiet
+				ride car.  If you know of ways we could improve Peaceful Ride (or
+				your SEPTA quiet ride), please email us at rr625@drexel.edu.</p>
+
+		</div>
+		<div data-role="footer" class="ui-footer" data-position="fixed">
+			<h1></h1>
+			<a href="#" id="back" data-rel="back" class="infoBtn ui-btn ui-btn-corner-all ui-btn-inline" height="50%">Back</a>
+		</div>
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,223 @@
+/*!
+* jQuery Mobile 1.4.5
+* Git HEAD hash: 68e55e78b292634d3991c795f06f5e37a512decc <> Date: Fri Oct 31 2014 17:33:30 UTC
+* http://jquerymobile.com
+*
+* Copyright 2010, 2014 jQuery Foundation, Inc. and othercontributors
+* Released under the MIT license.
+* http://jquery.org/license
+*
+*/
+
+
+/* Globals */
+/* Font
+-----------------------------------------------------------------------------------------------------------*/
+html {
+	font-size: 100%;
+}
+
+body,
+input,
+select,
+textarea,
+button,
+.ui-btn {
+	font-size: 1em;
+	line-height: 1.3;
+	 font-family: sans-serif /*{global-font-family}*/;
+}
+legend,
+.ui-input-text input,
+.ui-input-search input {
+	color: inherit;
+	text-shadow: inherit;
+}
+/* Form labels (overrides font-weight bold in bars, and mini font-size) */
+.ui-mobile label,
+div.ui-controlgroup-label {
+	font-weight: normal;
+	font-size: 16px;
+}
+
+/* Buttons
+-----------------------------------------------------------------------------------------------------------*/
+.ui-btn,
+label.ui-btn {
+	border-width: 1px;
+	border-style: solid;
+}
+.ui-btn {
+	text-decoration: none !important;
+}
+.ui-btn-active {
+	cursor: pointer;
+}
+/* Corner rounding
+-----------------------------------------------------------------------------------------------------------*/
+/* Class ui-btn-corner-all deprecated in 1.4 */
+.ui-corner-all {
+	-webkit-border-radius: 6em /*{global-radii-blocks}*/;
+	border-radius: 6em /*{global-radii-blocks}*/;
+}
+/* Buttons */
+.ui-btn-corner-all,
+.ui-btn.ui-corner-all,
+/* Slider track */
+.ui-slider-track.ui-corner-all,
+/* Flipswitch */
+.ui-flipswitch.ui-corner-all,
+/* Count bubble */
+.ui-li-count {
+	-webkit-border-radius: 6em /*used to be .3125em*/ /*{global-radii-buttons}*/;
+	border-radius: 6em /*used to be .3125em*/ /*{global-radii-buttons}*/;
+}
+/* Icon-only buttons */
+.ui-btn-icon-notext.ui-btn-corner-all,
+.ui-btn-icon-notext.ui-corner-all {
+	-webkit-border-radius: 6em;
+	border-radius: 6em;
+}
+/* Radius clip workaround for cleaning up corner trapping */
+.ui-btn-corner-all,
+.ui-corner-all {
+	-webkit-background-clip: padding;
+	background-clip: padding-box;
+}
+
+/* Icons
+-----------------------------------------------------------------------------------------------------------*/
+.ui-btn-icon-left:after,
+.ui-btn-icon-right:after,
+.ui-btn-icon-top:after,
+.ui-btn-icon-bottom:after,
+.ui-btn-icon-notext:after {
+	background-color: #666666 /*{global-icon-color}*/;
+	background-color: rgba(0,0,0,.15) /*{global-icon-disc}*/;
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-border-radius: 1em;
+	border-radius: 1em;
+}
+
+/* D
+-----------------------------------------------------------------------------------------------------------*/
+/* Bar: Toolbars, dividers, slider track */
+.ui-bar-d,
+.ui-page-theme-d .ui-bar-inherit,
+html .ui-bar-d .ui-bar-inherit,
+html .ui-body-d .ui-bar-inherit,
+html body .ui-group-theme-d .ui-bar-inherit {
+	background-color: #00ffff /*{d-bar-background-color}*/;
+	border-color: #00ffff /*used to be #dddddd*/ /*{d-bar-border}*/;
+	color: #333333 /*{d-bar-color}*/;
+	text-shadow: 0 /*{d-bar-shadow-x}*/ 0px /*{d-bar-shadow-y}*/ 0 /*{d-bar-shadow-radius}*/ #eeeeee /*{d-bar-shadow-color}*/;
+}
+.ui-bar-d {
+	border-width: 1px;
+	border-style: solid;
+}
+/* Page and overlay */
+.ui-overlay-d,
+.ui-page-theme-d,
+.ui-page-theme-d .ui-panel-wrapper {
+	background-color: #3fa9f5 /*{d-page-background-color}*/;
+	border-color: #3fa9f5 /*used to be #bbbbbb*/ /*{d-page-border}*/;
+	color: #ffffff /*{d-page-color}*/;
+	text-shadow: 0 /*{d-page-shadow-x}*/ 0px /*{d-page-shadow-y}*/ 0 /*{d-page-shadow-radius}*/ #f3f3f3 /*{d-page-shadow-color}*/;
+}
+/* Body: Read-only lists, text inputs, collapsible content */
+.ui-body-d,
+.ui-page-theme-d .ui-body-inherit,
+html .ui-bar-d .ui-body-inherit,
+html .ui-body-d .ui-body-inherit,
+html body .ui-group-theme-d .ui-body-inherit,
+html .ui-panel-page-container-d {
+	background-color: #3fa9f5 /*{d-page-background-color}*/;
+	border-color: #3fa9f5 /*used to be #bbbbbb*/ /*{d-page-border}*/;
+	color: #ffffff /*{d-body-color}*/;
+	text-shadow: 0 /*{d-body-shadow-x}*/ 0px /*{d-body-shadow-y}*/ 0 /*{d-body-shadow-radius}*/ #f3f3f3 /*{d-body-shadow-color}*/;
+}
+.ui-body-d {
+	border-width: 1px;
+	border-style: solid;
+}
+/* Links */
+.ui-page-theme-d a,
+html .ui-bar-d a,
+html .ui-body-d a,
+html body .ui-group-theme-d a {
+	color: #182ea0 /*{d-link-color}*/;
+}
+.ui-page-theme-d a:visited,
+html .ui-bar-d a:visited,
+html .ui-body-d a:visited,
+html body .ui-group-theme-d a:visited {
+    color: #3388cc /*{d-link-visited}*/;
+}
+.ui-page-theme-d a:hover,
+html .ui-bar-d a:hover,
+html .ui-body-d a:hover,
+html body .ui-group-theme-d a:hover {
+	color: #005599 /*{d-link-hover}*/;
+}
+.ui-page-theme-d a:active,
+html .ui-bar-d a:active,
+html .ui-body-d a:active,
+html body .ui-group-theme-d a:active {
+	color: #005599 /*{d-link-active}*/;
+}
+/* Button up */
+.ui-page-theme-d .ui-btn,
+html .ui-bar-d .ui-btn,
+html .ui-body-d .ui-btn,
+html body .ui-group-theme-d .ui-btn,
+html head + body .ui-btn.ui-btn-d,
+/* Button visited */
+.ui-page-theme-d .ui-btn:visited,
+html .ui-bar-d .ui-btn:visited,
+html .ui-body-d .ui-btn:visited,
+html body .ui-group-theme-d .ui-btn:visited,
+html head + body .ui-btn.ui-btn-d:visited {
+	background-color: #182ea0 /*{d-bup-background-color}*/;
+	border-color: #182ea0 /*used to be #dddddd*/ /*{d-bup-border}*/;
+	color: #ffffff /*{d-bup-color}*/;
+	text-shadow: 0 /*{d-bup-shadow-x}*/ 0px /*{d-bup-shadow-y}*/ 0 /*{d-bup-shadow-radius}*/ #f3f3f3 /*{d-bup-shadow-color}*/;
+}
+/* Button hover */
+.ui-page-theme-d .ui-btn:hover,
+html .ui-bar-d .ui-btn:hover,
+html .ui-body-d .ui-btn:hover,
+html body .ui-group-theme-d .ui-btn:hover,
+html head + body .ui-btn.ui-btn-d:hover {
+	background-color: #182ea0 /*{d-bhover-background-color}*/;
+	border-color: #f8ff05 /*{d-bhover-border}*/;
+	color: #ffffff /*{d-bhover-color}*/;
+	text-shadow: 0 /*{d-bhover-shadow-x}*/ 0px /*{d-bhover-shadow-y}*/ 0 /*{d-bhover-shadow-radius}*/ #f3f3f3 /*{d-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-d .ui-btn:active,
+html .ui-bar-d .ui-btn:active,
+html .ui-body-d .ui-btn:active,
+html body .ui-group-theme-d .ui-btn:active,
+html head + body .ui-btn.ui-btn-d:active {
+	background-color: #182ea0 /*{d-bdown-background-color}*/;
+	border-color: #f8ff05 /*{d-bdown-border}*/;
+	color: #f8ff05 /*{d-bdown-color}*/;
+	text-shadow: 0 /*{d-bdown-shadow-x}*/ 1px /*{d-bdown-shadow-y}*/ 0 /*{d-bdown-shadow-radius}*/ #f3f3f3 /*{d-bdown-shadow-color}*/;
+}
+
+div .infoBtn {
+	position: absolute;
+	right: 10px;
+	bottom: 0px;
+}
+
+p, button, h1, div {
+	text-size: 4em;
+	}
+
+div .ui-footer {
+	background-color: #3fa9f5 !important;
+	border-color: #3fa9f5 !important;
+}
