@@ -1,6 +1,62 @@
 AUTHOR: Rob Ross
 Date: Aug 28, 2017
-CS 530 Final Project
+Drexel Computer Science Course: CS 530 Final Project
+Final Project
+
+What is this?  And what problem is it trying to solve?
+I attend school at Drexel University, in downtown Philadelphia.  However, I live about 
+20 miles north west of the city. Thus, I ride Philadelphia's (SEPTA) regional rail train
+to and from the city (about an hour each way) 5 days a week.  The main reason I ride 
+SEPTA is that I can use that hour to study and work on projects, instead of focusing on 
+driving.  Thus, I was overjoyed to learn that, about 10 years ago, SEPTA introduced 
+the Quiet Ride car.  The first car of all multi-car trains to and from Philadelphia (between 
+the hours of 4 am and 7 pm) are Quiet Ride cars.  In these cars, riders are not permitted
+to talk on their phones or to each other, and they are not permitted to listen to 
+music or watch videos unless they use headphones.  It is a great environment in which to
+get two additional hours of work done...or, at least it can be.  
+ 
+However, about twice a week, I find myself sitting next to someone who just can't help themselves and 
+has to talk on their phone or listen to music in the quiet ride car.  Now, I'm normally not one 
+to judge someone for talking on the phone or listening to music.  However, they are in 
+a car called the Quiet Ride car.  And they have 2 to 5 cars directly behind them, on the same
+train in which they would be welcome to talk on their phone.  (In case you think I'm 
+crazy, you can find articles in respected news outlets ranting and raving about the same 
+phenomenon.  Check here: www.phillymag.com/articles/hell-other-people-septa-quietride-car/ 
+or google "SEPTA Quiet Ride."  Three of the top siz hits are similar articles.
+
+SEPTA's current solution to this problem involves conductors quieting noisy passengers.  
+However, SEPTA conductors are responsible for multiple cars, and so are (understandably) 
+outside of the Quiet Ride car for most of the commute.  The problem here is that the people 
+who are aware of the problem are not connected to the people who have the ability to solve 
+the problem.  Or, in more tech-geeky language, the problem is that the sensor 
+and the actuator are not connected.  
+
+PeacefulRide attempts to connect the sensors to the actuators (passengers to conductors).  
+At this point, the application is not fully functional.  Instead, all that currently exists 
+is a demonstration version of the passenger user interface.  If you inspect the interface, 
+you'll see that it was designed with two goals in mind: to be fast and to instill peace in 
+its user.  
+
+People who would use this application do not want others around them to know that they are 
+communicating with the conductors.  If they wanted others to know that they disapproved of their 
+noise, they would just tell them to be quiet.  Thus, the application interface had to be 
+quick and intuitive.
+
+Further, people who use this application will likely be agitated, angry, guilty, embarassed, 
+anxious.  Thus, the application was designed to reassure the user and to move them towards a 
+peaceful place.
+
+
+How to run the application:
+1) Everything you need to run the application is in the folder - 
+just pull the repo and you should be ready to go.  
+2) Once you have all the files (and one folder) in the same directory, navigate to the directory 
+from the commandline, type "chrome index.html" and you should be able to see the demo.  
+3) Alternatively, you can right click on index.html and select openwith-\>chrome, or your favorite 
+web browser.  
+4) If that doesn't work for you either, you can see the application on my personal site: 
+https://www.cs.drexel.edu/~rr625/cs530/Project
+
 
 Included Files:
 1) index.html - the sole html file which contains the structure and content of the app
@@ -10,18 +66,14 @@ Included Files:
 	NOTE: peacefulride.css is nested in the folder: themes.
 3) I have included the other files which were included when I downloaded 
 	peacefulride.css from themeroller.  I did not edit their content at all.
-
-
-How to run:
-1) Easiest way: the current version of the application (with the code that 
-	is submitted here) can be found on my cs website: 
-	https://www.cs.drexel.edu/~rr625/cs530/Project/
-2) another option: unzip all files into a directory.  
-	Right click on index.html and select Openwith->Chrome to view application. 
-3) NOTE: the application is intended to be used primarily by mobile users, 
+4) NOTE: the application is intended to be used primarily by mobile users, 
 	because that is how people would engage the app on the quiet ride car.  
 	As such, you'll want to either view the code with a mobile device 
 	or turn on chrome's developer's tools to see how the page renders on a mobile device.
+
+
+I'd love to hear your thoughts on the application.  (This is my first mobile app, and I imagine 
+there are dozens of things I could do better.)  
 
 Thanks,
 Rob
